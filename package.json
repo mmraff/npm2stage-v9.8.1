@@ -1,0 +1,53 @@
+{
+  "name": "@offliner/npm2stage-v9.8.1",
+  "version": "1.0.0",
+  "description": "CLI to manage npm-two-stage installation for npm 9.8.1",
+  "author": "Matthew Rafferty <mmraff@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmraff/npm2stage-v9.8.1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mmraff/npm2stage-v9.8.1/issues"
+  },
+  "homepage": "https://github.com/mmraff/npm2stage-v9.8.1#readme",
+  "keywords": [
+    "npm",
+    "download",
+    "install",
+    "offline",
+    "package",
+    "air-gap"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "bin": {
+    "npm2stage": "./cli.js"
+  },
+  "files": [
+    "cli.js",
+    "lib/*.js"
+  ],
+  "scripts": {
+    "test:unit": "tap --no-coverage --no-coverage-report test/*_test.js",
+    "test:integr8n": "tap --no-coverage --no-coverage-report test/integration.js",
+    "cover:unit": "tap test/*_test.js",
+    "cover:integr8n": "tap test/integration.js",
+    "test": "npm run test:unit && npm run test:integr8n",
+    "coverage": "npm run cover:unit && npm run test:integr8n"
+  },
+  "tap": {
+    "coverage-map": "test/config/index.js"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "npm-two-stage": "github:mmraff/npm-two-stage#npm9.8.1"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "semver": "^7.5.1",
+    "tap": "^16.3.6"
+  }
+}
